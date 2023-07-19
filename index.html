@@ -13,21 +13,22 @@
       background-image: url('static/images/wallpaper.jpg'); /* Replace this URL with your background image */
       background-size: cover;
       background-position: center;
+    
     }
 
     /* Navbar Styles */
     .navbar {
-      background-color: rgba(18, 18, 18, 0.8); /* Transparent black */
+      background-color: black; 
       position: sticky;
       top: 0;
       z-index: 100;
-    }
+    } 
 
     .navbar-brand {
-      color: #FFA500; /* Dark Orange */
+      color: #FFA500; 
       font-size: 30px;
       font-weight: bold;
-    }
+    } 
 
     /* Neon Glowing Animation */
     .jumbotron {
@@ -101,49 +102,412 @@
     body::-webkit-scrollbar-thumb:hover {
       background-color: #ff751a; /* Lighter shade of Dark Orange */
     }
+    .slideshow-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: none;
+    max-height: none;
+    opacity: 0.5; /* Set the opacity value as per your preference */
+    transition: opacity 1s ease;
+}
+.slideshow-container {
+    position: fixed; /* Change position to fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Change height to 100% */
+    margin: 0;
+    padding: 0;
+    z-index: -1; /* Move slideshow to the background */
+    opacity: 0.3; /* Set the opacity value as per your preference */
+
+}
+.slideshow-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.desktop-image {
+    display: block;
+    width: 100%; /* Fill the available width without gaps */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.mobile-image {
+    display: none;
+    width: 100%; /* Fill the available width without gaps */
+    height: auto; /* Maintain aspect ratio */
+}
+
+@media (max-width: 768px) {
+    .desktop-image {
+        display: none;
+    }
+
+    .mobile-image {
+        display: block;
+    }
+    .col-md-3{
+      padding-top: 60px;
+    }
+}
+
+        .slideshow-container img.active {
+            opacity: 1;
+        }
+
+        /* .navbar {
+      background-color: rgba(18, 18, 18, 0.8);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 10px 0;
+    } */
+
+
+    .logo {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .neonlogo {
+      /* Add your neon glowing effect styles here if needed */
+    }
+
+    .navbar-toggler {
+      border: none;
+      background: transparent;
+      outline: none;
+    }
+
+    .navbar-toggler-icon {
+      color: #FFA500;
+      font-size: 24px;
+    }
+
+    .navbar-nav {
+      align-items: center;
+    }
+
+    .nav-item {
+      margin: 0 10px;
+    }
+
+    .nav-link {
+      color: #fff;
+      font-size: 18px;
+    }
+
+    /* Mobile Overlay Styling */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+      display: none;
+      z-index: 999; /* Ensure the overlay is on top of everything else */
+    }
+
+    .show-overlay {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+    /* Shop Now Button Styles */
+    .shop-now-button {
+      position: relative;
+      display: inline-block;
+      background-color: #FFA500; /* Dark Orange */
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      padding: 12px 30px;
+      margin-top: 30px;
+      color: #000;
+      text-decoration: none;
+      overflow: hidden;
+    }
+
+    .shop-now-button .btn-content {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      background-color: #ff751a; /* Lighter shade of Dark Orange */
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 30px;
+      white-space: nowrap;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .shop-now-button:hover .btn-content {
+      transform: translateX(0);
+    }
+
+       /* Animation Styles */
+       @keyframes fadeInSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    
+
+    .laptop {
+      animation: fadeInSlideIn 0.5s ease-in-out;
+    }    .desktop{
+      animation: fadeInSlideIn 0.6s ease-in-out;
+    }    .security{
+      animation: fadeInSlideIn 0.7s ease-in-out;
+    }    .printer {
+      animation: fadeInSlideIn 0.8s ease-in-out;
+    }
+
+    .notification-icon {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: #ff751a; /* Orange */
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
+
+    /* Notification Pop-up Styles */
+    .notification-popup {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      width: 300px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      display: none;
+      z-index: 999;
+    }
+
+    .notification-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ff751a; /* Orange */
+    }
+
+    .notification-content {
+      font-size: 16px;
+      color: #333;
+    }
+
+        /* Services Section Styles */
+        .services-container {
+      padding: 50px 0;
+    }
+
+    .service-box {
+      padding: 20px;
+      border: 2px solid #FFA500; /* Dark Orange */
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      margin-bottom: 30px;
+      transition: transform 0.3s ease;
+      background-color: rgba(18, 18, 18, 1); /* Transparent black */
+      backdrop-filter: blur(5px);
+    }
+
+    .service-box img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .service-box h2 {
+      font-size: 24px;
+      color: #FFA500; /* Dark Orange */
+      margin-bottom: 15px;
+    }
+
+    .service-box p {
+      font-size: 18px;
+    }
+
+    .service-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
   </style>
 </head>
 <body>
 
+  <div class="notification-icon" onclick="showNotificationPopup()">
+    <i class="fa fa-bell"></i>
+    <span class="notification-badge">!</span>
+  </div>
+
+  <!-- Notification Pop-up -->
+  <div class="notification-popup" id="notificationPopup">
+    <div class="notification-title">Running Offers</div>
+    <div class="notification-content">
+      <p>1. Limited Time Offer: Get 20% off on all laptops!</p>
+      <p>2. New Arrivals: Check out our latest desktop models.</p>
+      <p>3. Special Deal: Buy one printer, get a pack of paper free.</p>
+    </div>
+  </div>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navx">
     <div class="container">
-      <a class="navbar-brand" href="#" data-text="Tab Infotech">Tab Infotech</a>
+      <a class="navbar-brand" href="#">
+        <img class="logo" src="static/logo_ex.jpg" alt="">
+        <span class="neonlogo">Infotech</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
-
   <!-- Jumbotron -->
   <div class="jumbotron">
     <div class="container">
       <h1>Welcome to Tab Infotech</h1>
-      <p>Your one-stop computer shop for all your tech needs.</p>
-      <a href="#" class="btn btn-primary">Shop Now</a>
+      <p id="subheading">Your one-stop computer shop for all your tech needs.</p>
     </div>
+    
   </div>
+
+  <div class="slideshow-container">
+    <div class="image-container">
+        <img src="static/images/slideshow/wide/image1.jpg" alt="Mobile Image 1" class="desktop-image">
+        <img src="static/images/slideshow/small/image1.jpg" alt="Mobile Image 3" class="mobile-image">
+    </div>
+    <div class="image-container">
+        <img src="static/images/slideshow/wide/image2.jpg" alt="Mobile Image 2" class="desktop-image">
+        <img src="static/images/slideshow/small/image2.jpg" alt="Mobile Image 3" class="mobile-image">
+      </div>
+    <div class="image-container">
+        <img src="static/images/slideshow/wide/image3.jpg" alt="Mobile Image 3" class="desktop-image">
+        <img src="static/images/slideshow/small/image2.jpg" alt="Mobile Image 3" class="mobile-image">
+    </div>
+</div>
 
   <!-- Features -->
   <div class="features">
     <div class="container">
       <div class="row">
-        <div class="col-md-4">
-          <i class="feature-icon fas fa-laptop"></i>
+        <div class="col-md-3 laptop">
+          <i class="fa fa-laptop" style="font-size:40px;color:orange;" aria-hidden="true"></i>
           <h2 class="feature-title">Laptops</h2>
           <p>Explore a wide range of laptops for work and play.</p>
+          <a href="product#laptops" class="btn btn-primary shop-now-button"><i class="fa fa-shopping-cart" style="color:black;" aria-hidden="true"></i></a>
         </div>
-        <div class="col-md-4">
-          <i class="feature-icon fas fa-desktop"></i>
+        <div class="col-md-3 desktop">
+          <i class="fa fa-desktop" style="font-size:40px;color:orange;" aria-hidden="true"></i>
           <h2 class="feature-title">Desktops</h2>
           <p>Powerful desktop computers for your computing needs.</p>
+          <a href="product#laptops" class="btn btn-primary shop-now-button"><i class="fa fa-shopping-cart" style="color:black;" aria-hidden="true"></i></a>
         </div>
-        <div class="col-md-4">
-            <i class="feature-icon fas fa-video"></i>
-            <h2 class="feature-title">Security Solutions</h2>
-            <p>Discover our advanced CCTV systems for enhanced security.</p>
-          </div>
+        <div class="col-md-3 security">
+          <i class="fa fa-lock" style="font-size:40px;color:orange;" aria-hidden="true"></i>
+          <h2 class="feature-title">Security Solutions</h2>
+          <p>Discover our advanced CCTV systems for enhanced security.</p>
+          <a href="product#laptops" class="btn btn-primary shop-now-button"><i class="fa fa-shopping-cart" style="color:black;" aria-hidden="true"></i></a>
+        </div>        
+        <div class="col-md-3 printer">
+          <i class="fa fa-print" style="font-size:40px;color:orange;" aria-hidden="true"></i>
+          <h2 class="feature-title">Printers</h2>
+          <p>Discover High-Performance Printers and Services</p>
+          <a href="product#laptops" class="btn btn-primary shop-now-button"><i class="fa fa-shopping-cart" style="color:black;" aria-hidden="true"></i></a>
+        </div>
       </div>
     </div>
   </div>
-
+  <div class="services-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="service-box">
+            <img src="static/images/repair_pc.PNG" alt="Repairing Service">
+            <h2>Repairing Service</h2>
+            <p>We provide expert repairing services for all your tech devices.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-box">
+            <img src="static/images/build_pc.PNG" alt="Building Gaming PC">
+            <h2>Building Gaming PC</h2>
+            <p>Custom-built gaming PCs tailored to your gaming needs and preferences.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-box">
+            <img src="static/images/blk_order.PNG" alt="Bulk Order Service">
+            <h2>Bulk Order Service</h2>
+            <p>Get exclusive discounts and offers on bulk orders for your business needs.</p>
+          </div>
+        </div>
+        <!-- Add more services as needed... -->
+      </div>
+    </div>
+  </div>
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -152,8 +516,53 @@
   </footer>
 
   <!-- Scripts -->
+  <script>
+      //sub-heading changings :
+      const subheadings = [
+      "Your one-stop computer shop for all your tech needs.",
+      "Discover the latest technology products and services.",
+      "Get the best deals on laptops, desktops, and more.",
+      "Expert solutions for all your computing requirements.",
+      "Experience top-notch customer service and support."
+    ];
+
+    const subheadingElement = document.getElementById("subheading");
+
+    function getRandomSubheading() {
+      return subheadings[Math.floor(Math.random() * subheadings.length)];
+    }
+
+    subheadingElement.innerText = getRandomSubheading();
+
+
+            // Slideshow background
+            const images = document.querySelectorAll('.slideshow-container img');
+        let currentImgIndex = 0;
+        setInterval(() => {
+            images.forEach((img, index) => {
+                if (index === currentImgIndex) {
+                    img.classList.add('active');
+                } else {
+                    img.classList.remove('active');
+                }
+            });
+            currentImgIndex = (currentImgIndex + 1) % images.length;
+        }, 2000);
+
+        function showNotificationPopup() {
+      var popup = document.getElementById("notificationPopup");
+      if (popup.style.display === "block") {
+        popup.style.display = "none";
+      } else {
+        popup.style.display = "block";
+      }
+    }
+  </script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 </body>
 </html>
